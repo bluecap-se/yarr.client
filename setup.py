@@ -23,5 +23,7 @@ setup(
     author_email='hello@bluecap.se',
     url='https://github.com/bluecap-se/yarr.client',
     license=license,
-    zip_safe=False
+    zip_safe=False,
+    packages=['yarr_client'],
+    scripts=['bin/yarr.client']
 )
