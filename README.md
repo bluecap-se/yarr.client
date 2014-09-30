@@ -35,6 +35,8 @@ $ yarr.client
 
 ### Options
 
+The configuration file params are defined in the [Flask documentation](http://flask.pocoo.org/docs/0.10/config/#builtin-configuration-values).
+
 ```console
 $ yarr.client -h
 
