@@ -61,3 +61,7 @@ Examples:
 ```Bash
 $ py.test
 ```
+
+## License
+
+Published under [MIT License](https://github.com/bluecap-se/yarr.client/blob/master/LICENSE).
