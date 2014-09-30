@@ -4,19 +4,16 @@
 Yarr.client - Web Client for Yarr!
 
 Usage:
-      yarr.client [--config TYPE] [options]
-      yarr.client [--host HOST] [--port PORT] [options]
+      yarr.client [--config FILE] [options]
 
 Options:
-  -c --config TYPE          Production or testing, defaults to development
-  --host HOST               Server listen on host
-  --port PORT               Server listen on port
+  -c, --config FILE         Path to Flask config file (params: bit.ly/1uamUo1)
   -h, --help                Output this help and exit
   -v, --version             Output version and exit
 
 Examples:
-  yarr.client -c production
-  yarr.client --host=localhost --port=8099
+  yarr.client
+  yarr.client -c /etc/production.cfg
 
 """
 
