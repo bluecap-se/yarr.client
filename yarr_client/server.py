@@ -13,7 +13,6 @@ app = Flask(__name__)
 
 # Load config
 app.config.from_object('app.config.Development')
-app.config.from_envvar('YARR_CONFIG', silent=True)
 
 if app.config.get('MINIFY_HTML', False):
     app.jinja_env.add_extension('jinja2htmlcompress.HTMLCompress')

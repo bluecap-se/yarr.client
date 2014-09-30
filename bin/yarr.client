@@ -2,8 +2,8 @@
 # -*- coding: utf-8 -*-
 
 import sys
-from yarr_client.server import app
+from yarr_client.__main__ import cli
 
 
 if __name__ == '__main__':
-    sys.exit(app.run())
+    sys.exit(cli())

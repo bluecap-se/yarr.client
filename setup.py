@@ -1,6 +1,8 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
+import yarr_client
+
 try:
     from setuptools import setup
 except ImportError:
@@ -13,13 +15,12 @@ with open('HISTORY.md') as f:
 with open('LICENSE') as f:
     license = f.read()
 
-VERSION = '0.0.1'
 
 setup(
-    name='yarr.client',
+    name=yarr_client.__title__,
     description='Web-based client for Yarr!',
     long_description=readme,
-    version=VERSION,
+    version=yarr_client.__version__,
     author_email='hello@bluecap.se',
     url='https://github.com/bluecap-se/yarr.client',
     license=license,
