@@ -1,0 +1,5 @@
+flask==0.10.1
+flask-assets==0.10
+closure==20140110
+compressinja==0.0.2
+cssmin==0.2.0
