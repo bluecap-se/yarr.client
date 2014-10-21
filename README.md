@@ -19,7 +19,7 @@ $ pip install yarr.client
 ```console
 $ git clone https://github.com/bluecap-se/yarr.client.git
 $ cd yarr.client
-$ pip install --pre -r requirements.txt
+$ pip install -r requirements.txt
 $ pip install -e .
 ```
 
