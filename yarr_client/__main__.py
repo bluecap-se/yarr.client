@@ -7,7 +7,7 @@ Main CLI entry point
 from docopt import docopt
 
 from . import __doc__, __title__, __version__
-from server import run_app
+from app import run_app
 
 
 def cli():

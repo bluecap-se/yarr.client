@@ -5,13 +5,14 @@ from flask import Flask, request, g, redirect, url_for, abort, \
 from flask.ext.assets import Environment, Bundle
 
 
+app = Flask(__name__)
+
+
 """
 Setup Flask
 """
 
 def run_app(config):
-
-    app = Flask(__name__)
 
     # Load config
     app.config.from_pyfile('defaults.cfg')
@@ -35,15 +36,25 @@ def run_app(config):
 
     app.run()
 
-    """
-    Routes
-    """
 
-    @app.route('/')
-    def index():
-        return render_template('base.html')
+"""
+Routes
+"""
+
+@app.route('/')
+def index():
+
+    return render_template('index.html')
 
 
-    @app.route('/search')
-    def search():
-        return 'Search'
+@app.route('/search')
+def search():
+
+    params = request.args
+
+    query = params.get('q', None)
+
+    if not query:
+        return redirect(url_for('index'))
+
+    return 'Search'

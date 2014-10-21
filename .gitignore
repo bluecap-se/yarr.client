@@ -37,4 +37,6 @@ nosetests.xml
 
 # Own
 */static/.webassets-cache*
-*/static/gen*
+*/static/gen/*.css
+*/static/gen/*.js
+

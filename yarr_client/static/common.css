@@ -1,4 +1,14 @@
 
-body {
-    background: red;
+.jumbotron {
+    width: 700px;
+    height: 300px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin: -150px 0 0 -350px;
+    text-align: center;
+}
+
+.search-form {
+    padding-top: 20px;
 }
