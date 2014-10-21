@@ -4,4 +4,4 @@ flask-assets==0.10
 closure==20140110
 compressinja==0.0.2
 cssmin==0.2.0
-requests==2.4.1
+requests==2.4.3
