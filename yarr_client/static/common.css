@@ -9,6 +9,11 @@
     text-align: center;
 }
 
-.search-form {
+.search-form,
+.results {
     padding-top: 20px;
+}
+
+.color-black {
+    color: #000;
 }

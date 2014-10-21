@@ -4,18 +4,12 @@
 
 {% block content %}
 
-    <div class="jumbotron">
-        <h1>Yarr!</h1>
-        <p>Find the best torrent from The Pirate Bay.</p>
-
-        <form class="form-inline search-form" role="form" action="{{ url_for('search') }}" method="get">
-            <div class="form-group">
-                <label for="exampleInputEmail2">Search for...</label>
-                <input type="text" name="q" class="form-control" id="exampleInputEmail2" placeholder="game of thrones">
-            </div>
-            <button type="submit" class="btn btn-primary">Find it</button>
-        </form>
-
-    </div>
+    <form class="form-inline search-form" role="form" action="{{ url_for('search') }}" method="get">
+        <div class="form-group">
+            <label for="query">Search for...</label>
+            <input type="text" name="q" class="form-control" id="query" placeholder="game of thrones">
+        </div>
+        <button type="submit" class="btn btn-primary">Find it</button>
+    </form>
 
 {% endblock %}

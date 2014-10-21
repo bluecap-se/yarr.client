@@ -50,11 +50,14 @@ def index():
 @app.route('/search')
 def search():
 
-    params = request.args
-
-    query = params.get('q', None)
+    query = request.args.get('q', None)
 
     if not query:
         return redirect(url_for('index'))
 
-    return 'Search'
+    params = {
+        'torrent_name': 'fake',
+        'torrent_link': 'fake'
+    }
+
+    return render_template('search.html', **params)

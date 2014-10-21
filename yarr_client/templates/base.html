@@ -19,7 +19,11 @@
 </head>
 <body>
 
-    {% block content %}{% endblock %}
+    <div class="jumbotron">
+        <h1>Yarr!</h1>
+        <p>Find the best torrent from The Pirate Bay.</p>
+        {% block content %}{% endblock %}
+    </div>
 
     {% assets "js_all" %}
         <script href="{{ ASSET_URL }}"></script>
