@@ -39,4 +39,5 @@ nosetests.xml
 */static/.webassets-cache*
 */static/gen/*.css
 */static/gen/*.js
+.cache
 

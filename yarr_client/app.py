@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 
+import requests
+
 from flask import Flask, request, g, redirect, url_for, abort, \
      render_template, flash
 from flask.ext.assets import Environment, Bundle
@@ -37,6 +39,20 @@ def run_app(config):
     app.run()
 
 
+def create_request(query):
+
+    yarr_url = app.config.get('YARR_URL', False)
+    if not yarr_url:
+        raise('No URL to Yarr! server specified in config.')
+
+    api_token = app.config.get('YARR_API_TOKEN', False)
+    headers = {'X-API-KEY': api_token} if api_token else {}
+    payload = {'q': query}
+    url = '%s/search' % yarr_url
+
+    return requests.get(url, params=payload, headers=headers)
+
+
 """
 Routes
 """
@@ -55,9 +71,16 @@ def search():
     if not query:
         return redirect(url_for('index'))
 
+    yarr_request = create_request(query)
+
+    if yarr_request.status_code is not 200:
+        return redirect(url_for('index'))
+
+    data = yarr_request.json()
+
     params = {
-        'torrent_name': 'fake',
-        'torrent_link': 'fake'
+        'torrent_name': data.get('name', 'No name'),
+        'torrent_link': data.get('magnet', '')
     }
 
     return render_template('search.html', **params)
