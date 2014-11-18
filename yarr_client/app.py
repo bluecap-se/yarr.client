@@ -79,7 +79,7 @@ def search():
     data = yarr_request.json()
 
     params = {
-        'torrent_name': data.get('name', 'No name'),
+        'torrent_name': data.get('name', 'None found'),
         'torrent_link': data.get('magnet', '')
     }
 
