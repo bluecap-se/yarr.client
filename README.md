@@ -19,7 +19,7 @@ $ pip install yarr.client
 ```console
 $ git clone https://github.com/bluecap-se/yarr.client.git
 $ cd yarr.client
-$ pip install --pre -r requirements.txt
+$ pip install -r requirements.txt
 $ pip install -e .
 ```
 
@@ -36,6 +36,9 @@ $ yarr.client
 ### Options
 
 The configuration file params are defined in the [Flask documentation](http://flask.pocoo.org/docs/0.10/config/#builtin-configuration-values).
+
+Additional, app-specific params are `YARR_URL` and `YARR_API_TOKEN`. `YARR_URL` is the path to the [Yarr!](https://github.com/bluecap-se/yarr)
+server, and `YARR_API_TOKEN` needs to be set if the server has a corresponding token specified in its config.
 
 ```console
 $ yarr.client -h
@@ -58,8 +61,24 @@ Examples:
 
 ## Run tests
 
-```Bash
+```console
 $ py.test
+```
+
+### Watch for changes
+
+To run the tests continuously, run the test command with the watch or follow flag `-f`:
+
+```console
+$ py.test -f
+```
+
+### Test coverage
+
+```console
+$ coverage run --source puzzle -m py.test
+$ coverage html
+$ open htmlcov/index.html
 ```
 
 ## License
