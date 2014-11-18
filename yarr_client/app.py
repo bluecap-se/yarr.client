@@ -2,10 +2,8 @@
 
 import requests
 
-from flask import Flask, request, g, redirect, url_for, abort, \
-     render_template, flash
+from flask import Flask, request, redirect, url_for, render_template
 from flask.ext.assets import Environment, Bundle
-
 
 app = Flask(__name__)
 
@@ -21,7 +19,7 @@ def run_app(config):
     app.config.from_pyfile(config, silent=True)
 
     if app.config.get('MINIFY_HTML', False):
-        app.jinja_env.add_extension('jinja2htmlcompress.HTMLCompress')
+        app.jinja_env.add_extension('flask_utils.jinja2htmlcompress.HTMLCompress')
 
 
     """
