@@ -73,14 +73,6 @@ To run the tests continuously, run the test command with the watch or follow fla
 $ py.test -f
 ```
 
-### Test coverage
-
-```console
-$ coverage run --source puzzle -m py.test
-$ coverage html
-$ open htmlcov/index.html
-```
-
 ## License
 
 Published under [MIT License](https://github.com/bluecap-se/yarr.client/blob/master/LICENSE).
