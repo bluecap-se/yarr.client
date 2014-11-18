@@ -34,7 +34,9 @@ def run_app(config):
     assets.register('js_all', js)
     assets.register('css_all', css)
 
-    app.run()
+    port = app.config.get('PORT', 5000)
+    host = app.config.get('HOST', '127.0.0.1')
+    app.run(port=port, host=host)
 
 
 def create_request(query):
