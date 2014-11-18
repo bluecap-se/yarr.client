@@ -1,4 +1,14 @@
 
+.github-ribbon {
+     position: absolute;
+     top: 0;
+     right: 0;
+}
+
+.github-ribbon img {
+    border: 0;
+}
+
 .jumbotron {
     width: 700px;
     height: 300px;
