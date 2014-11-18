@@ -9,8 +9,8 @@
 
     <title>Yarr! - {% block pagetitle %}{% endblock%}</title>
 
-    <link href="//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
     {% assets "css_all" -%}
         <link rel="stylesheet" href="{{ ASSET_URL }}" />
     {%- endassets %}
