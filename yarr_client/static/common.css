@@ -19,11 +19,15 @@
     text-align: center;
 }
 
-.search-form,
-.results {
+.search-form {
     padding-top: 20px;
 }
 
 .color-black {
     color: #000;
+}
+
+.results {
+    width: 90%;
+    margin: 30px auto 0 auto;
 }

@@ -4,11 +4,11 @@
 
 {% block content %}
 
-    <p class="results">
-        <b>Found:</b> <a href="{{ torrent_link }}" title="Download {{ torrent_name }}">{{ torrent_name }}</a>
-        <a href="{{ url_for('index') }}" title="Search again" class="color-black">
-            <span class="glyphicon glyphicon-repeat"></span>
+    <div class="results alert alert-success" role="alert">
+        <a class="close" href="{{ url_for('index') }}" title="Search again">
+            <span aria-hidden="true">&times;</span>
         </a>
-    </p>
+        <b>Found:</b> <a href="{{ torrent_link }}" title="Download {{ torrent_name }}">{{ torrent_name }}</a>
+    </div>
 
 {% endblock %}
