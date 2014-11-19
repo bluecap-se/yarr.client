@@ -12,15 +12,15 @@ app = Flask(__name__)
 Setup Flask
 """
 
-def run_app(config):
+
+def configurate_app(config_file=''):
 
     # Load config
     app.config.from_pyfile('defaults.cfg')
-    app.config.from_pyfile(config, silent=True)
+    app.config.from_pyfile(config_file, silent=True)
 
     if app.config.get('MINIFY_HTML', False):
         app.jinja_env.add_extension('flask_utils.jinja2htmlcompress.HTMLCompress')
-
 
     """
     Setup webassets
@@ -36,7 +36,8 @@ def run_app(config):
 
     port = app.config.get('PORT', 5000)
     host = app.config.get('HOST', '127.0.0.1')
-    app.run(port=port, host=host)
+
+    return app, host, port
 
 
 def create_request(query):
@@ -56,6 +57,7 @@ def create_request(query):
 """
 Routes
 """
+
 
 @app.route('/')
 def index():

@@ -7,13 +7,16 @@ Main CLI entry point
 from docopt import docopt
 
 from . import __doc__, __title__, __version__
-from app import run_app
+from app import configurate_app
 
 
-def cli():
+def cli(run=True):
     version = '%s %s' % (__title__, __version__)
     args = docopt(__doc__, version=version)
 
     config = args.get('--config') or ''
 
-    run_app(config)
+    app, host, port = configurate_app(config)
+
+    if run:
+        app.run(port=port, host=host)
