@@ -1,5 +1,8 @@
 # Changelog
 
+
+# 0.1.0
+
 - Added tests
 - Added api-token support
 - Added search route
