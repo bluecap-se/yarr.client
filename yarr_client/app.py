@@ -9,12 +9,17 @@ app = Flask(__name__)
 
 
 """
-Setup Flask
+Setup Flask app
 """
 
 
 def configurate_app(config_file=''):
+    """
+    Configures Flask app
 
+    :param config_file: Absolute path to Py config file, optional
+    :returns: App object, host and port
+    """
     # Load config
     app.config.from_pyfile('defaults.cfg')
     app.config.from_pyfile(config_file, silent=True)
@@ -22,10 +27,7 @@ def configurate_app(config_file=''):
     if app.config.get('MINIFY_HTML', False):
         app.jinja_env.add_extension('flask_utils.jinja2htmlcompress.HTMLCompress')
 
-    """
-    Setup webassets
-    """
-
+    # Setup web assets
     assets = Environment(app)
 
     js = Bundle('common.js', filters='closure_js', output='gen/main.%(version)s.js')
@@ -34,6 +36,7 @@ def configurate_app(config_file=''):
     assets.register('js_all', js)
     assets.register('css_all', css)
 
+    # Set host and port
     port = app.config.get('PORT', 5000)
     host = app.config.get('HOST', '127.0.0.1')
 
@@ -41,8 +44,14 @@ def configurate_app(config_file=''):
 
 
 def create_request(query):
+    """
+    Creates a GET request to Yarr! server
 
+    :param query: Free-text search query
+    :returns: Requests object
+    """
     yarr_url = app.config.get('YARR_URL', False)
+
     if not yarr_url:
         raise('No URL to Yarr! server specified in config.')
 
