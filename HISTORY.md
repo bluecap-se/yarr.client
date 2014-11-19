@@ -1,5 +1,6 @@
 # Changelog
 
+- Added tests
 - Added api-token support
 - Added search route
 - Added index route
