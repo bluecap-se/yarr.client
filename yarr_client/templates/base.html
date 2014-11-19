@@ -1,0 +1,37 @@
+<!doctype html>
+<!--[if lt IE 8]>  <html class="no-js ie lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>     <html class="no-js ie lt-ie9 ie8" lang="en"> <![endif]-->
+<!--[if gte IE 9]> <html class="no-js ie ie9" lang="en"> <![endif]-->
+<!--[if !IE]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+    <title>Yarr! - {% block pagetitle %}{% endblock%}</title>
+
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+    {% assets "css_all" -%}
+        <link rel="stylesheet" href="{{ ASSET_URL }}" />
+    {%- endassets %}
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+</head>
+<body>
+
+    <a href="https://github.com/bluecap-se/yarr.client" title="Fork me on GitHub" class="github-ribbon" target="_blank"><img src="https://camo.githubusercontent.com/a6677b08c955af8400f44c6298f40e7d19cc5b2d/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677261795f3664366436642e706e67" alt="Fork me on GitHub"></a>
+
+    <div class="jumbotron">
+        <h1>Yarr!</h1>
+        <p>Find the best torrent from The Pirate Bay.</p>
+        {% block content %}{% endblock %}
+    </div>
+
+{#
+    {% assets "js_all" %}
+        <script href="{{ ASSET_URL }}"></script>
+    {% endassets %}
+#}
+
+</body>
+</html>
