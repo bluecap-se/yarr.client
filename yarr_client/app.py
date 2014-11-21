@@ -21,7 +21,7 @@ def configurate_app(config_file=''):
     :returns: App object, host and port
     """
     # Load config
-    app.config.from_pyfile('defaults.cfg')
+    app.config.from_pyfile('defaults.py')
     app.config.from_pyfile(config_file, silent=True)
 
     if app.config.get('MINIFY_HTML', False):

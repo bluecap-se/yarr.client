@@ -12,7 +12,8 @@ with open('README.md') as f:
     readme = f.read()
 with open('HISTORY.md') as f:
     history = f.read()
-
+with open('requirements.txt') as f:
+    requirements = f.read().splitlines()
 
 setup(
     name=yarr_client.__title__,
@@ -26,6 +27,8 @@ setup(
     zip_safe=False,
     platforms='any',
     packages=['yarr_client'],
+    include_package_data=True,
+    install_requires=requirements,
     scripts=['bin/yarr.client'],
     keywords=['yarr', 'the pirate bay', 'web based', 'client'],
     classifiers=[

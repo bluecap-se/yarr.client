@@ -63,6 +63,7 @@ Examples:
 ## Run tests
 
 ```console
+$ pip install -r test_requirements.txt
 $ py.test
 ```
 
