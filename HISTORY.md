@@ -1,5 +1,6 @@
 # Changelog
 
+- Changed from Travis CI to Circle CI
 
 # 0.1.0
 
