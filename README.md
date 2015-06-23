@@ -1,8 +1,8 @@
 # Yarr! client
 
-[![Build Status](https://api.travis-ci.org/bluecap-se/yarr.client.svg)](https://travis-ci.org/bluecap-se/yarr.client)
-[![Dependency Status](https://gemnasium.com/bluecap-se/yarr.client.svg)](https://gemnasium.com/bluecap-se/yarr.client)
-[![PyPI version](https://badge.fury.io/py/yarr.client.svg)](http://badge.fury.io/py/yarr.client)
+[![Circle CI](https://img.shields.io/circleci/project/bluecap-se/yarr.client.svg)](https://circleci.com/gh/bluecap-se/yarr.client)
+[![Dependency Status](https://img.shields.io/gemnasium/bluecap-se/yarr.client.svg)](https://gemnasium.com/bluecap-se/yarr.client)
+[![PyPI version](https://img.shields.io/pypi/v/yarr.client.svg)](https://pypi.python.org/pypi/yarr.client/0.1.0)
 
 Web client for [Yarr!](https://github.com/bluecap-se/yarr) in Python.
 
