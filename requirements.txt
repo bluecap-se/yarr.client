@@ -1,6 +1,7 @@
-cssmin==0.2.0
 docopt==0.6.2
 flask==0.10.1
-flask-assets==0.11
+flask-assets==0.10
 flask-utils==0.1.1
-requests==2.7.0
+closure==20140110
+cssmin==0.2.0
+requests==2.4.3
