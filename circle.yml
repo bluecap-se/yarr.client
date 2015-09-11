@@ -1,0 +1,19 @@
+machine:
+  services:
+    - docker
+
+dependencies:
+  override:
+    - docker info
+    - docker build -t bluecap/yarr.client .
+
+test:
+  override:
+    - docker run -it bluecap/yarr.client py.test
+
+deployment:
+  hub:
+    branch: /.*/
+    commands:
+      - docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
+      - docker push bluecap/yarr.client

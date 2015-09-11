@@ -21,7 +21,7 @@ def configurate_app(config_file=''):
     :returns: App object, host and port
     """
     # Load config
-    app.config.from_pyfile('defaults.cfg')
+    app.config.from_pyfile('defaults.py')
     app.config.from_pyfile(config_file, silent=True)
 
     if app.config.get('MINIFY_HTML', False):
@@ -30,7 +30,7 @@ def configurate_app(config_file=''):
     # Setup web assets
     assets = Environment(app)
 
-    js = Bundle('common.js', filters='closure_js', output='gen/main.%(version)s.js')
+    js = Bundle('common.js', filters='jsmin', output='gen/main.%(version)s.js')
     css = Bundle('common.css', filters='cssmin', output='gen/main.%(version)s.css')
 
     assets.register('js_all', js)
