@@ -31,7 +31,7 @@ $ pip install -e .
 ```console
 $ yarr.client
 
- * Running on http://127.0.0.1:5000/
+ * Running on http://0.0.0.0:5000/
  * Restarting with reloader
 ```
 
@@ -48,7 +48,7 @@ $ yarr.client -h
 Yarr.client - Web Client for Yarr!
 
 Usage:
-      yarr.client [--config FILE] [options]
+      yarr.client runserver [--config FILE] [options]
 
 Options:
   -c, --config FILE         Path to Flask config file (params: bit.ly/1uamUo1)
@@ -56,8 +56,8 @@ Options:
   -v, --version             Output version and exit
 
 Examples:
-  yarr.client
-  yarr.client -c /etc/production.cfg
+  yarr.client runserver
+  yarr.client runserver -c /etc/production.cfg
 
 ```
 
