@@ -2,13 +2,7 @@
 
 import pytest
 
-from yarr_client.__main__ import cli
 from flask import url_for
-
-
-def test_cli():
-
-    assert not cli(False)
 
 
 def test_config(app):
