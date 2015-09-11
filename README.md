@@ -1,12 +1,19 @@
 # Yarr! client
 
-[![Build Status](https://api.travis-ci.org/bluecap-se/yarr.client.svg)](https://travis-ci.org/bluecap-se/yarr.client)
-[![Dependency Status](https://gemnasium.com/bluecap-se/yarr.client.svg)](https://gemnasium.com/bluecap-se/yarr.client)
-[![PyPI version](https://badge.fury.io/py/yarr.client.svg)](http://badge.fury.io/py/yarr.client)
+[![Circle CI](https://img.shields.io/circleci/project/bluecap-se/yarr.client.svg?style=flat-square)](https://circleci.com/gh/bluecap-se/yarr.client)
+[![Dependency Status](https://img.shields.io/gemnasium/bluecap-se/yarr.client.svg?style=flat-square)](https://gemnasium.com/bluecap-se/yarr.client)
+[![PyPI version](https://img.shields.io/pypi/v/yarr.client.svg?style=flat-square)](https://pypi.python.org/pypi/yarr.client/)
+[![Docker pulls](https://img.shields.io/docker/pulls/bluecap/yarr.client.svg?style=flat-square)](https://registry.hub.docker.com/u/bluecap/yarr.client/)
 
 Web client for [Yarr!](https://github.com/bluecap-se/yarr) in Python.
 
 ## Install
+
+### Using Docker
+
+```console
+$ docker run -d -p 80:5000 bluecap/yarr.client:latest
+```
 
 ### Using a package manager
 
@@ -30,7 +37,7 @@ $ pip install -e .
 ```console
 $ yarr.client
 
- * Running on http://127.0.0.1:5000/
+ * Running on http://0.0.0.0:5000/
  * Restarting with reloader
 ```
 
@@ -47,7 +54,7 @@ $ yarr.client -h
 Yarr.client - Web Client for Yarr!
 
 Usage:
-      yarr.client [--config FILE] [options]
+      yarr.client runserver [--config FILE] [options]
 
 Options:
   -c, --config FILE         Path to Flask config file (params: bit.ly/1uamUo1)
@@ -55,14 +62,23 @@ Options:
   -v, --version             Output version and exit
 
 Examples:
-  yarr.client
-  yarr.client -c /etc/production.cfg
+  yarr.client runserver
+  yarr.client runserver -c /etc/production.cfg
 
+```
+
+#### Options with Docker
+
+To use a custom configuration file in Docker, map your file using volumes.
+
+```console
+$ docker run -d -p 80:5000 -v /path/to/your/config.cfg:/yarr.config.cfg bluecap/yarr.client:latest
 ```
 
 ## Run tests
 
 ```console
+$ pip install -r test_requirements.txt
 $ py.test
 ```
 

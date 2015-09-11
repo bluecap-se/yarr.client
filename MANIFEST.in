@@ -1,0 +1,3 @@
+include *.md LICENSE requirements.txt
+recursive-include yarr_client/static *.css *.ico *.html
+exclude tests/* yarr_client/static/gen/* yarr_client/static/.webassets-cache/*
