@@ -4,7 +4,7 @@
 Yarr.client - Web Client for Yarr!
 
 Usage:
-      yarr.client [--config FILE] [options]
+      yarr.client runserver [--config FILE] [options]
 
 Options:
   -c, --config FILE         Path to Flask config file (params: bit.ly/1uamUo1)
