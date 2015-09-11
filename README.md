@@ -2,7 +2,7 @@
 
 [![Circle CI](https://img.shields.io/circleci/project/bluecap-se/yarr.client.svg?style=flat-square)](https://circleci.com/gh/bluecap-se/yarr.client)
 [![Dependency Status](https://img.shields.io/gemnasium/bluecap-se/yarr.client.svg?style=flat-square)](https://gemnasium.com/bluecap-se/yarr.client)
-[![PyPI version](https://img.shields.io/pypi/v/yarr.client.svg?style=flat-square)](https://pypi.python.org/pypi/yarr.client/0.1.0)
+[![PyPI version](https://img.shields.io/pypi/v/yarr.client.svg?style=flat-square)](https://pypi.python.org/pypi/yarr.client/)
 [![Docker pulls](https://img.shields.io/docker/pulls/bluecap/yarr.client.svg?style=flat-square)](https://registry.hub.docker.com/u/bluecap/yarr.client/)
 
 Web client for [Yarr!](https://github.com/bluecap-se/yarr) in Python.
