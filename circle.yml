@@ -1,11 +1,19 @@
 machine:
-  python:
-    version: 2.7
+  services:
+    - docker
 
 dependencies:
-  pre:
-    - pip install -r requirements.txt && pip install -r test_requirements.txt
+  override:
+    - docker info
+    - docker build -t bluecap/yarr.client .
 
 test:
   override:
-    - py.test
+    - docker run -it bluecap/yarr.client py.test
+
+deployment:
+  hub:
+    branch: /.*/
+    commands:
+      - docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
+      - docker push bluecap/yarr.client
