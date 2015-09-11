@@ -9,6 +9,12 @@ Web client for [Yarr!](https://github.com/bluecap-se/yarr) in Python.
 
 ## Install
 
+### Using Docker
+
+```console
+$ docker run -d -p 80:5000 bluecap/yarr.client:latest
+```
+
 ### Using a package manager
 
 ```console
@@ -59,6 +65,14 @@ Examples:
   yarr.client runserver
   yarr.client runserver -c /etc/production.cfg
 
+```
+
+#### Options with Docker
+
+To use a custom configuration file in Docker, map your file using volumes.
+
+```console
+$ docker run -d -p 80:5000 -v /path/to/your/config.cfg:/yarr.config.cfg bluecap/yarr.client:latest
 ```
 
 ## Run tests
